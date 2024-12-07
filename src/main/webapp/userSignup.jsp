@@ -1,91 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="CSS/signup.css">
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="CSS/signup.css">
 </head>
 <body>
-<!-- sign-up.jsp -->
-<div class="signup-container">
-    <div class="signup-form">
+    <div class="container">
+        <div class="title">Registration</div>
         <form action="${pageContext.request.contextPath}/addclient" method="post">
-            <section class="form-header text-center">
-                <h3>Create Your Account</h3>
-                <p>Fill in the information below to create your account.</p>
-            </section>
-
-            <!-- First and Last Name -->
-            <div class="form-row">
-                <div class="form-field">
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="fname" required>
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input type="text" name="fname" placeholder="Enter your first name" required>
                 </div>
-                <div class="form-field">
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lname" required>
+                <div class="input-box">
+                    <span class="details">Last Name</span>
+                    <input type="text" name="lname" placeholder="Enter your last name" required>
                 </div>
-            </div>
-
-            <!-- Email and Location -->
-            <div class="form-row">
-                <div class="form-field">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" required>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="email" name="email" placeholder="Enter your email" required>
                 </div>
-                <div class="form-field">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location" required>
+                <div class="input-box">
+                    <span class="details">Location</span>
+                    <input type="text" name="location" placeholder="Enter your location" required>
                 </div>
-            </div>
-
-            <!-- Mobile Number -->
-            <div class="form-row">
-                <div class="form-field">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" id="mobile" name="mobile" required>
+                <div class="input-box">
+                    <span class="details">Mobile Number</span>
+                    <input type="text" name="mobile" placeholder="Enter your number" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="password" name="pwd1" placeholder="Enter your password" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Confirm Password</span>
+                    <input type="password" name="pwd2" placeholder="Confirm your password" required>
                 </div>
             </div>
-
-            <!-- Gender and Date of Birth -->
-            <div class="form-row">
-                <div class="form-field">
-                    <label>Gender</label>
-                    <div class="gender-options">
-                        <label><input type="radio" name="gender" value="male" required> Male</label>
-                        <label><input type="radio" name="gender" value="female" required> Female</label>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" name="dob" id="dob" required>
-                </div>
-            </div>
-
-            <!-- Password and Confirm Password -->
-            <div class="form-row">
-                <div class="form-field">
-                    <label for="password1">Password</label>
-                    <input type="password" id="password1" name="pwd1" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-field">
-                    <label for="password2">Confirm Password</label>
-                    <input type="password" id="password2" name="pwd2" required>
+            
+            <!-- Gender Selection -->
+            <div class="gender-details">
+                <span class="gender-title">Gender</span>
+                <div class="category">
+                    <label>
+                        <input type="radio" name="gender" value="Male" required>
+                        <span class="dot"></span>
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Female" required>
+                        <span class="dot"></span>
+                        Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="Other" required>
+                        <span class="dot"></span>
+                        Prefer not to say
+                    </label>
                 </div>
             </div>
-
-            <!-- Sign Up Button -->
-            <div class="form-row text-center">
-                <button type="submit" class="btn-signup">Sign Up</button>
+            
+            <!-- Date of Birth -->
+            <div class="dob-container">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            
+            <div class="button">
+                <input type="submit" value="Register">
             </div>
         </form>
     </div>
-</div>
-
-
 </body>
 </html>

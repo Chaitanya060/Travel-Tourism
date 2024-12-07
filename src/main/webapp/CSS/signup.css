@@ -1,113 +1,189 @@
-/* Body with Background Image */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url('../IMAGES/signup.jpg'); /* Update this with the correct path */
-    background-size: cover;
-    background-position: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-/* Container with Transparency */
-.signup-container {
+.container {
+    max-width: 700px;
     width: 100%;
-    max-width: 600px;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.5); /* White with 85% opacity */
-    border-radius: 8px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Form Header */
-.signup-form .form-header {
-    margin-bottom: 20px;
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
 }
 
-.form-header h3 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
+.container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.form-header p {
-    font-size: 14px;
-    color: #666;
-    margin-top: 8px;
-}
-
-/* Form Row and Field Layout */
-.form-row {
+form .user-details {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+form .gender-details {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+form .gender-details .category {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+form .gender-details .category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Dot styling for the radio buttons */
+form .gender-details .category label .dot {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hidden radio buttons */
+form .gender-details input[type="radio"] {
+    display: none;
+}
+
+/* Style for selected dot */
+form .gender-details input[type="radio"]:checked + label .dot {
+    background: #9b59b6;
+    border-color: #d9d9d9;
+}
+
+/* Date of Birth Container */
+form .dob-container {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
-.form-field {
-    width: 100%;
-}
-
-.form-field label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #444;
+form .dob-container label {
+    font-weight: 500;
     margin-bottom: 5px;
-    display: inline-block;
 }
 
-.form-field input[type="text"],
-.form-field input[type="password"],
-.form-field input[type="date"] {
+form .dob-container input {
+    height: 45px;
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
     border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.form-field input[type="text"]:focus,
-.form-field input[type="password"]:focus,
-.form-field input[type="date"]:focus {
-    border-color: #007bff;
-}
-
-/* Gender Options */
-.gender-options {
-    display: flex;
-    gap: 15px;
-}
-
-.gender-options label {
+    border: 1px solid #ccc;
+    padding-left: 10px;
     font-size: 16px;
-    color: #444;
 }
 
 /* Submit Button */
-.btn-signup {
+form .button {
+    height: 45px;
+    margin: 35px 0;
+}
+
+form .button input {
+    height: 100%;
     width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
     border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
-.btn-signup:hover {
-    background-color: #0056b3;
+form .button input:hover {
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 500px) {
-    .form-row {
-        flex-direction: column;
+@media(max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    form .gender-details .category {
+        width: 100%;
+    }
+
+    .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
     }
 }

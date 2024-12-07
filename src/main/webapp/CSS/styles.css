@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Reset and basic styles */
 * {
     margin: 0;
@@ -17,11 +15,12 @@ body {
     top: 0;
     width: 100%;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo a {
@@ -41,6 +40,11 @@ body {
     text-decoration: none;
     color: #333;
     font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #007BFF;
 }
 
 .navbar .book-now {
@@ -49,6 +53,11 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar .book-now:hover {
+    background-color: #0077cc;
 }
 
 /* Background video */
@@ -66,31 +75,36 @@ body {
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    filter: brightness(0.7); /* Slight darkening for better text contrast */
 }
 
 /* Search Section */
 .search-section {
     position: relative;
-    top: 100px;
+    top: 150px; /* Adjust to align below navbar */
     text-align: center;
     color: white;
+    z-index: 5;
 }
 
 .search-section h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .search-section h1 {
     font-size: 48px;
     font-weight: bold;
     margin-bottom: 30px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .search-form {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap; /* Makes it responsive */
 }
 
 .search-form input[type="text"],
@@ -99,6 +113,7 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 16px;
+    width: 250px;
 }
 
 .search-form input[type="range"] {
@@ -113,4 +128,35 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #0077cc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-section h1 {
+        font-size: 36px;
+    }
+
+    .search-section h2 {
+        font-size: 20px;
+    }
+
+    .search-form input[type="text"],
+    .search-form input[type="date"] {
+        width: 100%;
+    }
+
+    .search-form {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

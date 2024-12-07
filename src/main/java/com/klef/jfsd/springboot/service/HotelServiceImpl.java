@@ -43,6 +43,19 @@ public class HotelServiceImpl implements HotelService{
 	public List<Hotels> ViewAllHotels() {
 		return (List<Hotels>) hotelRepository.findAll();
 	}
+
+
+
+	@Override
+	public List<Hotels> viewAllHotelByCategory(String category) {
+		
+		return hotelRepository.viewAllHotelByCategory(category);
+		
+		
+	}
+
+
+
 	
 	
 

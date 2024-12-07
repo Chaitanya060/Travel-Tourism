@@ -10,6 +10,7 @@ public interface HotelService {
 	   public List<Hotels> ViewAllHotels();
 	   public Hotels ViewHotelByID(int hotelid);
 	   public void DeleteHotelByID(int hotelid);
+	   List<Hotels> viewAllHotelByCategory(String category);
 	  
 
 }

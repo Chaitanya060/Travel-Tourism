@@ -4,10 +4,10 @@
 <html>
 <head>
 <%@ include file="navbar.jsp" %>
-<link rel="stylesheet" type="text/css" href="/styles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/style.css">
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home</title>
 </head>
 <body>
 
@@ -17,15 +17,67 @@
     </video>
 </div>
 
-<div class="search-section">
-    <h2>Our Packages</h2>
-    <h1>Search your Holiday</h1>
-    <form class="search-form">
-        <input type="text" placeholder="Search your destination" name="destination">
-        <input type="date" placeholder="Select your date" name="date">
-        <input type="range" min="0" max="5000" name="price" value="2500">
-        <button type="submit">More Filters</button>
-    </form>
+<!-- Image Slideshow -->
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="IMAGES/login.png" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="IMAGES/slide2.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="IMAGES/slide3.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="IMAGES/slide4.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="IMAGES/slide5.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+        <img src="IMAGES/slide6.jpg" style="width:100%">
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+    </div>
 </div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 4000); // Change slide every 4 seconds
+    }
+
+    function currentSlide(n) {
+        slideIndex = n - 1; // Adjust index for zero-based counting
+        showSlides();
+    }
+</script>
+
 </body>
 </html>

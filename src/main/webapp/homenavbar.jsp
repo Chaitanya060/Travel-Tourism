@@ -1,16 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div class="sidebar">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/home.css">
-    <div class="sidebar-header">
-        <h2>WanderStay</h2>
-        <p>Welcome back, <b>${sessionScope.username}</b>!</p>
-    </div>
-    <ul class="nav-links">
-        <li><a href="${pageContext.request.contextPath}/homestays"><i class="fas fa-home"></i> Homestays</a></li>
-        <li><a href="${pageContext.request.contextPath}/attractions"><i class="fas fa-map-marker-alt"></i> Attractions</a></li>
-        <li><a href="${pageContext.request.contextPath}/bookings"><i class="fas fa-book"></i> My Bookings</a></li>
-        <li><a href="${pageContext.request.contextPath}/guides"><i class="fas fa-users"></i> Local Guides</a></li>
-        <li><a href="${pageContext.request.contextPath}/settings"><i class="fas fa-cog"></i> Settings</a></li>
-        <li><a href="${pageContext.request.contextPath}/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-    </ul>
-</div>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS/homenavbar.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.jsp">Home</a></li>
+            <li><a href="viewalldestination.jsp">Destinations</a></li>
+            <li><a href="viewallhotel.jsp">Hotels</a></li>
+            <li><a href="profile">Profile</a></li>
+            <li><a href="login">Logout</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

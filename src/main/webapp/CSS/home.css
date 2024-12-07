@@ -1,111 +1,38 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    color: #333;
 }
 
-/* Container */
-.container {
-    display: flex;
-    width: 100%;
+.welcome-container {
+    text-align: center;
+    margin-top: 100px;
 }
 
-/* Sidebar */
-.sidebar {
-    background-color: #343a40;
-    color: #fff;
-    width: 20%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-
-.sidebar-header h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.sidebar-header p {
-    font-size: 0.9rem;
-    color: #ced4da;
+.welcome-container h1 {
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
-.nav-links {
-    list-style: none;
-    width: 100%;
+.welcome-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
-.nav-links li {
-    margin: 10px 0;
-}
-
-.nav-links a {
-    color: #fff;
+.explore-button {
     text-decoration: none;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-links a:hover {
-    color: #ffd200;
-}
-
-/* Main Content */
-.main-content {
-    background-color: #f8f9fa;
-    flex: 1;
-    padding: 20px;
-}
-
-.cards-container {
-    display: flex;
-    gap: 20px;
-}
-
-/* Card Styles */
-.card {
-    background: #fff;
-    border: 1px solid #ddd;
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    margin: 0 10px;
     border-radius: 5px;
-    width: 30%;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.card img {
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    height: 150px;
-    object-fit: cover;
-}
-
-.card h3 {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.btn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #0056b3;
+.explore-button:hover {
+    background-color: #575757;
+    transform: scale(1.05);
 }
